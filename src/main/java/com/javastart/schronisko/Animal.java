@@ -7,6 +7,16 @@ public class Animal {
     private String name;
     private String desc;
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    Category category;
+
     public Animal() {
         this.id = idCounter;
         this.desc = "Tu jest miejsce na opis";
@@ -20,11 +30,26 @@ public class Animal {
         this.id = idCounter;
     }
 
+    public Animal(String name, String desc, Category category) {
+        idCounter++;
+        this.name = name;
+        this.desc = desc;
+        this.id = idCounter;
+        this.category = category;
+    }
+
     public Animal(String name) {
         idCounter++;
         this.id = idCounter;
         this.name = name;
         this.desc = "Tu jest miejsce na opis";
+    }
+    public Animal(String name, Category category) {
+        idCounter++;
+        this.id = idCounter;
+        this.name = name;
+        this.desc = "Tu jest miejsce na opis";
+        this.category = category;
     }
 
     public String getDesc() {

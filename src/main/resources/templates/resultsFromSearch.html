@@ -12,7 +12,7 @@
 <a href="/dodajZwierzaka">Dodaj kolejnego zwierzaka</a>
 <a href="/szukajZwierzaka">Szukaj zwierzaka</a>
 
-<h2>Zwierzaki szukające domu</h2>
+<h2>Wyniki wyszukiwania</h2>
 <a href="http://javastart.pl">SUPER STRONA</a>
 <p th:each="animal: ${model}">
     <a th:href="${'/zwierzak?id=' + animal.id}" th:text="${animal.name}+' '+${animal.id}+' '+${animal.category}" />

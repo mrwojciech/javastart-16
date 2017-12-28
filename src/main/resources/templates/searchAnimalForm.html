@@ -9,18 +9,16 @@
     <h1>Schronisko Reksio i Klakier</h1>
 </div>
 
-<form action="/dopisujeZwierzaka" method="post" th:object="${pustyZwierzak}">
+<form action="/szukamZwierzaka" method="post" th:object="${pustyZwierzak}">
     Nazwa: <input type="text" th:field="*{name}" /><br/>
-       <p>Kategoria
-        <select th:field="*{category}">
-            <option th:each="category: ${T(com.javastart.schronisko.Category).values()}" th:value="${category}" th:text="${category}"></option>
-            </select>
-        </p>
-
     Opis: <input type="text" th:field="*{desc}" /><br/>
+    <p>Kategoria
+            <select th:field="*{category}">
+                <option th:each="category: ${T(com.javastart.schronisko.Category).values()}" th:value="${category}" th:text="${category}"></option>
+                </select>
+            </p>
 
-
-    <input type="submit" value="Dodaj" />
+    <input type="submit" value="Szukaj" />
 </form>
 
 

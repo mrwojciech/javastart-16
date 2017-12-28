@@ -11,14 +11,10 @@
 
 <a href="/dodajZwierzaka">Dodaj kolejnego zwierzaka</a>
 
-<!-- komentarz -->
-
 <h2>Zwierzaki szukające domu</h2>
-
 <a href="http://javastart.pl">SUPER STRONA</a>
-
-<p th:each="animal: ${animalList}">
-    <a th:href="${'/zwierzak?id=' + animal.id}" th:text="${animal.name}" />
+<p th:each="animal: ${model}">
+    <a th:href="${'/zwierzak?id=' + animal.id}" th:text="${animal.name}+' '+${animal.id}" />
 </p>
 
 </body>

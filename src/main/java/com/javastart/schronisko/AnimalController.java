@@ -12,31 +12,23 @@ public class AnimalController {
 
     @RequestMapping("/zwierzak")
     public String singleAnimal(@RequestParam Long id, Model model) {
-
         Animal animal = animalRepository.findById(id);
-
         model.addAttribute("animal", animal);
-
         return "animal";
     }
 
     @GetMapping("/dodajZwierzaka")
     public String addAnimal(Model model) {
-
         Animal pustyZwierzak = new Animal();
-        model.addAttribute("toBedzieNowyZwierzak", pustyZwierzak);
-
-        return "addAnimal";
+        model.addAttribute("pustyZwierzak", pustyZwierzak);
+        return "addAnimalForm";
     }
 
-    @PostMapping("/dodajProszeNowegoZwierzaka")
-    @ResponseBody
+    @PostMapping("/dopisujeZwierzaka")
     public String dodawanieZwierzaka(Animal wypelnionyZwierzak) {
-
+        wypelnionyZwierzak.increaseIdCounter();
+        wypelnionyZwierzak.setId(wypelnionyZwierzak.getIdCounter());
         animalRepository.addAnimal(wypelnionyZwierzak);
-
-        return "Dodano!";
+        return "dodano";
     }
-
-
 }

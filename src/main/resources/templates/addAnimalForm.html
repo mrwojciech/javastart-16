@@ -9,9 +9,9 @@
     <h1>Schronisko Reksio i Klakier</h1>
 </div>
 
-<form action="/dodajProszeNowegoZwierzaka" method="post" th:object="${toBedzieNowyZwierzak}">
+<form action="/dopisujeZwierzaka" method="post" th:object="${pustyZwierzak}">
     Nazwa: <input type="text" th:field="*{name}" /><br/>
-    Opis: <input type="text" /><br/>
+    Opis: <input type="text" th:field="*{desc}" /><br/>
     <input type="submit" value="Dodaj" />
 </form>
 

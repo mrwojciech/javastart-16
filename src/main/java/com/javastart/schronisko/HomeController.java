@@ -20,9 +20,9 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-        List<Animal> all = animalRepository.getAll();
-        model.addAttribute("animalList", all);
-        return "index";
+        List<Animal> listOfAllAnimals = animalRepository.getAll();
+        model.addAttribute("model", listOfAllAnimals);
+        return "home";
     }
 
 }
